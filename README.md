@@ -1,8 +1,21 @@
 
+# Disclaimer
+This project is provided **AS-IS** without any warranty.  
+Use at your own risk. It is intended for **read-only security checks**.  
+Always test in a **sandbox account** before using in production.
+
+
+
 # AWS Security Toolkit
 
 A practical, lightweight toolkit to audit AWS accounts for common misconfigurations and baseline security gaps.  
 **Safe by default:** all operations are **read-only**, using a least-privilege IAM role.
+
+> **Disclaimer**  
+> This project is provided **as-is** without any warranty. Use at your own risk.  
+> The authors are not responsible for any damage, data loss, or security incidents.  
+> Always test in a **sandbox** environment before deploying in production.  
+> The toolkit performs **read-only** operations, but incorrect use of IAM roles or credentials can still create risk.
 
 ## Features
 - 🚀 Easy CLI: `awssec scan all`
