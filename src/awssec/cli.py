@@ -1,4 +1,4 @@
-# Disclaimer: Provided AS IS without warranty. Read only security checks. Test in sandbox first.
+# Disclaimer: AS-IS, no warranty. Read-only security checks. Test in sandbox first.
 import argparse
 import sys
 from typing import List
@@ -32,8 +32,9 @@ def main():
     s = mk_session(profile=args.profile, region=args.region, role_arn=args.role_arn, external_id=args.external_id)
     regions = [args.region] if args.region else enabled_regions(s)
 
-    targets = [None]  # None means current session
-    if args.org-scan:
+    # Determine targets
+    targets = [None]
+    if args.org_scan:
         accounts = list_org_accounts(s)
         targets = accounts or []
 

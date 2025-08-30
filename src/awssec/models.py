@@ -1,4 +1,4 @@
-# Disclaimer: Provided AS IS without warranty. Read only security checks. Test in sandbox first.
+# Disclaimer: AS-IS, no warranty. Read-only security checks. Test in sandbox first.
 from dataclasses import dataclass, asdict
 from typing import Optional, Dict, Any, List
 
