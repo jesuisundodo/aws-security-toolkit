@@ -1,0 +1,14 @@
+{
+  "ConfigRuleName": "iam-user-mfa-enabled",
+  "Description": "Checks whether IAM users have MFA enabled.",
+  "Scope": {
+    "ComplianceResourceTypes": [
+      "AWS::IAM::User"
+    ]
+  },
+  "Source": {
+    "Owner": "AWS",
+    "SourceIdentifier": "IAM_USER_MFA_ENABLED"
+  },
+  "InputParameters": {}
+}
