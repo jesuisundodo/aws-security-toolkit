@@ -1,7 +1,7 @@
 
 # AWS Security Toolkit
 
-[![CI](https://github.com/<your-username>/aws-security-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/aws-security-toolkit/actions/workflows/ci.yml)
+[![CI](https://github.com/aleksandarnenov/aws-security-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/aws-security-toolkit/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![AWS](https://img.shields.io/badge/AWS-Security-orange.svg)](https://aws.amazon.com/security/)
