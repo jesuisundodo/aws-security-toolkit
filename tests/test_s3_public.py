@@ -1,3 +1,4 @@
+# Disclaimer: AS-IS, no warranty. Read-only security checks. Test in sandbox first.
 import boto3
 from moto import mock_aws
 from awssec.rules import s3_public

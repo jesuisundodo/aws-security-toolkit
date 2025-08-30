@@ -1,21 +1,20 @@
-# v0.1.0 Release Notes
+# Disclaimer
+This software is provided **AS-IS**, without any warranty or guarantee of fitness for a particular purpose. 
+Use at your own risk. Intended for **read-only security checks** only. 
+Always test in a **sandbox AWS account** before any production use.
 
-Highlights
-- Read only CLI with two rules: root MFA and S3 public
-- JSON and SARIF outputs, stable exit codes
-- CI with lint, type check, tests, Bandit, pip audit
-- CodeQL and Dependabot
-- Policies and docs for safe setup
+## AWS Security Toolkit v0.1.0
 
-Install
-```bash
-pip install -e .[dev]
-```
+**Status:** MVP, read-only, safe by default
 
-Quick demo
+### Highlights
+- CLI with two starter rules
+- Multi-region by default, org-scan scaffold
+- Outputs: table, json, sarif
+- Stable exit codes
+- Policies and SECURITY policy
+
+### Quick start
 ```bash
 awssec scan all --format table
 ```
-
-Safe use
-Run in a sandbox first. Use AWSSEC_ReadOnly role with ExternalId.
