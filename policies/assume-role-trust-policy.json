@@ -1,2 +1,19 @@
-// # Disclaimer: Provided AS-IS without warranty. Read-only security checks. Test in sandbox first.
-Content from assume-role-trust-policy.json
+// Disclaimer: Provided AS IS without warranty. Read only security checks. Test in sandbox first.
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowScannerAccountToAssume",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::123456789012:root"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": {
+          "sts:ExternalId": "replace-with-strong-external-id"
+        }
+      }
+    }
+  ]
+}

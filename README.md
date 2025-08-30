@@ -1,74 +1,40 @@
-
-# Disclaimer
-This project is provided **AS-IS** without any warranty.  
-Use at your own risk. It is intended for **read-only security checks**.  
-Always test in a **sandbox account** before using in production.
-
-
-
 # AWS Security Toolkit
 
-A practical, lightweight toolkit to audit AWS accounts for common misconfigurations and baseline security gaps.  
-**Safe by default:** all operations are **read-only**, using a least-privilege IAM role.
+> Disclaimer  
+> Provided AS IS without warranty. Use at your own risk. Read only checks. Test in sandbox first.
 
-> **Disclaimer**  
-> This project is provided **as-is** without any warranty. Use at your own risk.  
-> The authors are not responsible for any damage, data loss, or security incidents.  
-> Always test in a **sandbox** environment before deploying in production.  
-> The toolkit performs **read-only** operations, but incorrect use of IAM roles or credentials can still create risk.
+A practical, lightweight toolkit to audit AWS accounts for common misconfigurations and baseline security gaps.
 
 ## Features
-- 🚀 Easy CLI: `awssec scan all`
-- 🔒 Safe by design: no write actions, least-privilege IAM policy provided
-- 📦 Outputs: table, JSON, SARIF (for GitHub Code Scanning)
-- 🌍 Multi-region and multi-account scanning with AssumeRole
-- 🧩 Modular rules: add new checks easily
-- 🛠️ CI-ready: exit codes per severity, coverage reports, security linting
+- Easy CLI: `awssec scan all`
+- Safe by design: no write actions, least privilege IAM policy
+- Outputs: table, JSON, SARIF
+- Multi region and multi account with AssumeRole
+- Modular rules
+- CI ready exit codes
 
-## Installation
+## Install
 ```bash
 pip install -e .[dev]
 ```
 
-## Quick Start
+## Quick start
 ```bash
 awssec scan all --format table
 ```
 
-## Example Checks
+## Examples
 ```bash
 awssec scan iam-root-mfa --format table
 awssec scan s3-public --format json
-awssec scan all --format sarif   --role-arn arn:aws:iam::<ACC>:role/AWSSEC_ReadOnly   --external-id <YourExternalId>
+awssec scan all --format sarif --role-arn arn:aws:iam::<ACC>:role/AWSSEC_ReadOnly --external-id <ID>
 ```
 
-## Outputs
-| Format  | Use case                               |
-|---------|---------------------------------------|
-| table   | Local audit, quick inspection         |
-| json    | CI/CD pipelines, integrations         |
-| sarif   | Upload to GitHub Security Code Scanning |
+## Exit codes
+0 clean, 1 medium or low only, 2 any high, 4 internal error
 
-## Exit Codes
-| Code | Meaning                     |
-|------|-----------------------------|
-| 0    | No findings                 |
-| 1    | Only Medium/Low findings    |
-| 2    | High findings present       |
-| 4    | Internal error / permissions|
-
-## Safe Use
-- Provided `policies/read-only-scan-policy.json` defines **List/Get/Describe** only.
-- Use a dedicated `AWSSEC_ReadOnly` role in each account with an ExternalId.
-- Scanner refuses to run if unsafe actions are detected.
-
-## Development
-```bash
-pytest -q --cov=src
-ruff check .
-mypy src
-pip-audit
-```
+## Safe use
+Use policies in policies/ and a dedicated AWSSEC_ReadOnly role. Run from a security account and enable MFA and CloudTrail.
 
 ## Contributing
-Contributions welcome! Add new checks under `src/awssec/rules/`.
+Add new checks under src/awssec/rules/

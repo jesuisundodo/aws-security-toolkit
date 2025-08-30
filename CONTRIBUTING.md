@@ -1,18 +1,7 @@
-
 # Contributing
 
-1. Create a topic branch.
-2. Run ruff and black.
-3. Add or update tests.
-4. Open a pull request.
-
-## Dev setup
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .[dev]
-ruff check .
-black --check .
-pytest -q
-```
+Thank you for your interest. Please follow these steps:
+1. Fork and create a feature branch.
+2. Run ruff, mypy, pytest and ensure coverage does not drop.
+3. Add tests for new rules.
+4. Open a PR with a clear summary and example outputs.
